@@ -8,53 +8,43 @@ public:
 	{
 		std::cout << "Animal " << std::endl;
 	}
-	Animal()
-	{
-		std::cout << "animal Constructor" << std::endl;
-	}
+	
+	virtual ~Animal() = default;
 
-	~Animal()
-	{
-		std::cout << "animal Destructor " << std::endl;
-	}
+private:
+	double height;
 };
 
 class Cat: public Animal
 {
 public:
-	Cat()
-	{
-		std::cout << "Cat Constructor" << std::endl;
-	}
-
-	~Cat()
-	{
-		std::cout << "Cat Destructor " << std::endl;
-	}
 
 	void speak() override
 	{
 		std::cout << "meow! " << std::endl;
 	}
 
+private:
+	double Weight
+
 };
 
-class Dog : public Animal
-{
-public:
-
-	Dog()
-	{
-		std::cout << "Dog Constructor" << std::endl;
-	}
-
-	~Dog()
-	{
-		std::cout << "Dog Destructor " << std::endl;
-	}
-
-	void speak() override
-	{
-		std::cout << "bark" << std::endl;
-	}
-};
+// class Dog : public Animal
+// {
+// public:
+// 
+// 	Dog()
+// 	{
+// 		std::cout << "Dog Constructor" << std::endl;
+// 	}
+// 
+// 	~Dog()
+// 	{
+// 		std::cout << "Dog Destructor " << std::endl;
+// 	}
+// 
+// 	void speak() override
+// 	{
+// 		std::cout << "bark" << std::endl;
+// 	}
+// };
