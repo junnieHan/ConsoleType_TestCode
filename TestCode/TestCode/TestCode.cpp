@@ -5,16 +5,19 @@
 #include "ClassStudy.h"
 #include <string>
 #include "InheritanceClass.h"
+#include "LRValue.h"
 #include <vector>
 using namespace std;
 
 int main()
 {
+	std::string a = "junhee";
+	LRValue LR;
+	LR.storeByValue(a);
+	LR.storeByLRef(a);
+	LR.storeByRRef(std::move(a));
 
-	Animal* polyAnmial = new Animal;
-	polyAnmial->speak();
-
-	delete polyAnmial;
+	cout << "a:" << a << endl;
 
 
 	return 0;
