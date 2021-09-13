@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClassStudy.h" />
+    <ClInclude Include="FunctionProgramming.h" />
     <ClInclude Include="InheritanceClass.h" />
     <ClInclude Include="LRValue.h" />
   </ItemGroup>
