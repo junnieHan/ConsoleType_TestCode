@@ -12,31 +12,44 @@ using namespace std;
 
 int main()
 {
-// 	//Function Object 
-// 	FunctionProg func1(3);
-// 	FunctionProg func2(5);
+// 	std::vector<int> vec{ 1,2,3 };
 // 
-// 	cout << func1(10) << endl;
-// 	cout << func2(10) << endl;
+// 	cout << "vecSize:" << vec.size() << endl;
+// 	cout << "vecCapacity:" << vec.capacity() << endl;
+// 
+// 	vec.clear();
+// 
+// 	cout << "vecClearSize:" << vec.size() << endl;
+// 	cout << "vecClearCapacity:" << vec.capacity() << endl;
+// 
+// 	vec.push_back(1);
+// 	vec.push_back(2);
+// 	vec.push_back(3);
+// 	vec.push_back(4);
+// 	vec.push_back(5);
+// 
+// 	cout << "vecappendDataSize:" << vec.size() << endl;
+// 	cout << "vecappendDataCapacity:" << vec.capacity() << endl;
+// 
+// 	vec.shrink_to_fit();
+// 	
+// 	cout << "vecShink_fit_Size:" << vec.size() << endl;
+// 	cout << "vecShink_fit_Capacity:" << vec.capacity() << endl;
 
-// Lamda 
-	int nLocalVar{ 3 };
-// Variable Type : deep copy
-	auto lamdaFunc = [nLocalVar/* = */](int x)
-	{
-		return nLocalVar + x;
-	};
+	std::vector<int> vecRemove{ 0,1, 0, 1, 0, 1 };
+	auto remove = std::remove(vecRemove.begin(), vecRemove.end(), 0);
 
-	cout << "lamdaVariable:" <<lamdaFunc(10) << endl;
-// ReferenceTpye : obj에 주로 사용해야함
-	FunctionProg func{ 5 };
-	auto LamdaFuncRef = [&func/*&*/](int x)
+	for (auto data : vecRemove)
 	{
-		return func.getData() + x;
-	};
-	cout << "lamdaRef:" << LamdaFuncRef(10) << endl;
-	//ThisType 스코프밖에 있는 class 안에 있는 함수
-	func.FunctionPlus(5);
+		cout << data;
+	}
+
+	vecRemove.erase(remove, vecRemove.end());
+
+	for (auto data : vecRemove)
+	{
+		cout <<data;
+	}
 
 	return 0;
 }
